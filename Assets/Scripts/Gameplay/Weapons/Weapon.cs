@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] protected float damage;
 
+    [SerializeField] protected float weaponRange;
+
     [SerializeField] protected float shootCooldown;
     protected float timerShootCooldown = 0;
 
@@ -60,7 +62,7 @@ public class Weapon : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 10)) {
+            if (Physics.Raycast(ray, out hit, weaponRange)) {
                 if (layerEnemy == (layerEnemy | (1 << hit.transform.gameObject.layer))) {
                     Enemy e = hit.transform.GetComponent<Enemy>();
                     if (e)

@@ -8,6 +8,9 @@ public class PlayerCameraMovementMouse : MonoBehaviour
     [SerializeField] Transform playerBody;
 
     float xRotation = 0;
+
+    public bool canMoveCamera = true;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -15,6 +18,9 @@ public class PlayerCameraMovementMouse : MonoBehaviour
 
     void Update()
     {
+        if (!canMoveCamera)
+            return;
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

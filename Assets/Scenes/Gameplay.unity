@@ -750,9 +750,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathfinding: {fileID: 833073315}
+  movementSpeed: 3
   health: 100
   damage: 15
   attackCooldown: 1.33
+  attackDistance: 1.5
+  actualState: 0
 --- !u!65 &833073314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1001,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 2000
   playerBody: {fileID: 1566483130}
+  canMoveCamera: 1
 --- !u!1 &964613456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,8 +1417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2832923b3967ac45aa5ab22176c6d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  shootCooldown: 0.15
+  damage: 50
+  weaponRange: 25
+  shootCooldown: 0.33
   ammoPerMagazine: 12
   actualAmmo: 12
   reloadTime: 1.5
@@ -1471,6 +1476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   actualWeapon: {fileID: 1509550413}
+  playerCameraMouse: {fileID: 963194229}
+  actualState: 0
 --- !u!136 &1566483132
 CapsuleCollider:
   m_ObjectHideFlags: 0
