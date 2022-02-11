@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.dungeoncrawlershooter.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Administrador\\Desktop\\Dungeon-Crawler-Shooter\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Dungeon Crawler Shooter [Testing]"
+        }
+      }
+    }
+  ]
+}
