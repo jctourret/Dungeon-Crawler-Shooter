@@ -6,14 +6,20 @@ public class Weapon : MonoBehaviour
 {
 
     [SerializeField] protected float damage;
+    [SerializeField] protected float headshotMultiplier;
 
     [SerializeField] protected float weaponRange;
+
+    [SerializeField] protected Transform cannonPos;
 
     [SerializeField] protected float shootCooldown;
     protected float timerShootCooldown = 0;
 
     [SerializeField] protected int ammoPerMagazine;
     [SerializeField] protected int actualAmmo;
+
+    [SerializeField] GameObject particlesHitPrefab;
+    [SerializeField] GameObject bulletHolePrefab;
 
     [SerializeField] protected float reloadTime;
     protected float timerReloading = 0;
@@ -28,6 +34,8 @@ public class Weapon : MonoBehaviour
 
    protected virtual void Update()
    {
+        Debug.DrawRay(cannonPos.position, cannonPos.forward * weaponRange, Color.yellow);
+
         switch (actualState) {
             case WeaponState.Reloading:
                 timerReloading += Time.deltaTime;
@@ -59,14 +67,20 @@ public class Weapon : MonoBehaviour
         }
 
         if (actualState == WeaponState.Ready) {
-            Vector3 mousePos = Input.mousePosition;
-            Ray ray = Camera.main.ScreenPointToRay(mousePos);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, weaponRange)) {
+
+            if (Physics.Raycast(cannonPos.position, cannonPos.forward, out hit, weaponRange)) {
+
                 if (layerEnemy == (layerEnemy | (1 << hit.transform.gameObject.layer))) {
                     Enemy e = hit.transform.GetComponent<Enemy>();
                     if (e)
                         e.Hit(damage);
+                    GameObject ps = Instantiate(particlesHitPrefab, hit.point, particlesHitPrefab.transform.rotation);
+                    Destroy(ps, 1);
+                }
+                else {
+                    GameObject hole = Instantiate(bulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.LookRotation(hit.normal));
+                    Destroy(hole, 5f);
                 }
             }
 
