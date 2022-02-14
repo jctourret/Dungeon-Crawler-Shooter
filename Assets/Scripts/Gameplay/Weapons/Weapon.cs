@@ -18,8 +18,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected int ammoPerMagazine;
     [SerializeField] protected int actualAmmo;
 
-    [SerializeField] GameObject particlesHitPrefab;
-    [SerializeField] GameObject bulletHolePrefab;
+    [SerializeField] protected GameObject particlesHitPrefab;
+    [SerializeField] protected GameObject bulletHolePrefab;
 
     [SerializeField] protected float reloadTime;
     protected float timerReloading = 0;

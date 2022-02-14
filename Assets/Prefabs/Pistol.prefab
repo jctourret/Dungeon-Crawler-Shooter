@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520727382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.25}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1459376227071065521}
-  m_RootOrder: 0
+  m_Father: {fileID: 1459376227478558970}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459376226543026603
 GameObject:
@@ -79,8 +79,8 @@ MonoBehaviour:
   weaponRange: 25
   cannonPos: {fileID: 520727383}
   shootCooldown: 0.33
-  ammoPerMagazine: 12
-  actualAmmo: 12
+  ammoPerMagazine: 10
+  actualAmmo: 10
   particlesHitPrefab: {fileID: 3170341730862960002, guid: 0055a1ac904d655439ce80bd8b45d803, type: 3}
   bulletHolePrefab: {fileID: 3701030072362383426, guid: 0e69b8908f0f3d74fbbc8d803c9e9a85, type: 3}
   reloadTime: 1.5
@@ -117,8 +117,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.5}
-  m_Children:
-  - {fileID: 520727383}
+  m_Children: []
   m_Father: {fileID: 1459376227478558970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -212,6 +211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1459376227071065521}
+  - {fileID: 520727383}
   m_Father: {fileID: 1459376226543026604}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
