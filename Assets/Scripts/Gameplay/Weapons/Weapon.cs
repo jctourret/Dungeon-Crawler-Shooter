@@ -56,10 +56,9 @@ public class Weapon : MonoBehaviour
    }
 
     public virtual void Shoot() {
-        if (actualState == WeaponState.Preparing || actualState == WeaponState.Reloading) {
-            Debug.Log("Cant shoot");
+        if (actualState == WeaponState.Preparing || actualState == WeaponState.Reloading) 
             return;
-        }
+        
 
         if(actualState == WeaponState.NoAmmo) {
             Reload();
@@ -72,9 +71,17 @@ public class Weapon : MonoBehaviour
             if (Physics.Raycast(cannonPos.position, cannonPos.forward, out hit, weaponRange)) {
 
                 if (layerEnemy == (layerEnemy | (1 << hit.transform.gameObject.layer))) {
-                    Enemy e = hit.transform.GetComponent<Enemy>();
-                    if (e)
-                        e.Hit(damage);
+                    Enemy e = hit.transform.GetComponentInParent<Enemy>();
+
+                    if (e) {
+                        if (hit.transform.CompareTag("EnemyHead")) {
+                            Debug.Log("PUM HEADSHOT");
+                            e.Hit(damage * headshotMultiplier);
+                        }
+                        else
+                            e.Hit(damage);
+                    }
+
                     GameObject ps = Instantiate(particlesHitPrefab, hit.point, particlesHitPrefab.transform.rotation);
                     Destroy(ps, 1);
                 }
@@ -85,13 +92,11 @@ public class Weapon : MonoBehaviour
             }
 
             actualState = WeaponState.Preparing;
-            Debug.Log("Pew pew");
 
             actualAmmo--;
-            if (actualAmmo <= 0) {
+            if (actualAmmo <= 0)
                 actualState = WeaponState.NoAmmo;
-                Debug.Log("No ammo");
-            }
+            
         }
     }
 
@@ -99,7 +104,6 @@ public class Weapon : MonoBehaviour
         if (actualState != WeaponState.Reloading) {
             actualState = WeaponState.Reloading;
             timerReloading = 0f;
-            Debug.Log("reloading");
         }
     }
 

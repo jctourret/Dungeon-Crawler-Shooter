@@ -366,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACon+ujAHOzSQIAAAwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGFVMtu2zAQ/BWD56bwq4DTW6s4Tg9JjLpFLrqsyZVFmCIFPmI7gf+9S0qyFOfQk+WZ2d3Zh/TOpHY1cm/sykrxaASy7yMWn9mXUU8+4BF2Rm/kG3aaFyl8GUWQNL/BS0P4JIY5U6G3kv/QOxXFYwKDloWx1VLsMDPOO4ILUA6JssbHaE3Q+4gd24BT+/sWf0dneuKoPdr/qYLmCqoaRXTbi2edetbINPXRKqJnbpSSrjXB/KlOTWZQu0AtkEBIoKZS+agvUe5KT3+mw+DnonDoW0sWTnfS0myarOynaQZWgds3vl5BBbwYb1I+fmJvJokurKkeuqqTcazgS8n3v+HEwfnBPIfw3UfbQR9A7WGr8KVE/WRW1gQtiPQ2xNDgcHo3SHXpLCuR73td4/UKDPXn3Uz63ZxT78dMyWobka/zBtgok6Z9G2PQ0l5+keF0Ea7NRGg08dfhH9gNT6cl7qV1nqi2oI7utibYKGXLNLPYTPCZsRoT3HquUYPypzWl8dcLvOIGZa+Ye4gvSVu85brbvwpJcK8fj6+otTlcluVKc3hEVz4Hr6TG3nQknmhOmdG6ua/hTLqwTbAF8EHYLkjx8bTYWEAhpuMFR8G/LfjkZjafTOcLuJ3BfFHw6Zal25Oa+gS1boy246GtDWei6dC6j8doZaFOxy4sHFbyrTKDmUtdmA23iPr5YwqHlqrQSymWQtKENui91Gnh7D1nyvA9ivySKE+tLo/eQt5nyVktX42PSM6y9MnIWYQvt7y2+CrxEIt3yc7s/A9QSwMEFAAACAgAAKif6wKHi+JtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJBSmJaipGBRXJqSrKpRbKhrrGJoZGJRaKlcaKJRVqyUZJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAKif66MAc7NJAgAADAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAKif6wKHi+JtAAAAeAAAAAkAJAAAAAAAAAAAAAAAlgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABOAwAAAAA=
+    dataString: UEsDBBQAAAgIAACon+u8gGRySgIAAAwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGFVMuS2jAQ/BVK5ySFgVRBbolh2RxYqCWpvfgipDFWIUsuPXht8e8ZyTb2soecMN09Mz0P+50IZStgTpulEXylOZAfAxKeyZdBRz7Dme612oortJo3wV0RRDRqXqkTGvEkhFldgjOC/VR7GcRDBL0SuTblgu8h1dZZhHMqLSBltAvRCqH3ATk3AZfm9xp+Bzd8YqAcmP+pvGKSlhXw4LYTj1v1uJYp7KNRBM9MSylsY4K4SxWbTGllPbaAAi4oNhXLB30BYl84/DPqB6/z3IJrLBl6mQuDs6mzkl+6HlhJ7aH2daTSw914nXL1iU1mSeRzo8vntmwyDCVcIdjhlV4Yta430D48/+jbqxOVB7qT8FaAetFLo73iSDrjQ6i3MJr3Ut1bSwtgh05Xm30AffV5OUm3nFts/pxKUe4C8m1SA1up47hnIQYMLuY3Go4nYZtMiAYTfy38ofv+7TTEkzDWIdUUVMHdTnsTpGQRZxaa8S7VRkGEG88VKCrdZYNp3OMGH7he2QfmiYa3pCnecO3xP4REuNMPhw/URp/uy7KFPq3AFmvvpFDQmQ7EC84p1UrVB9afSRu29SanrBe294J/vC0y5DTno+GUAWffpyz5Op4ko8mUzsZ0Ms3ZaEfi7QmFfVK5qY0248GtqS65wjtrPx6DpaFVPHZu6GkprqXujVyoXG+ZAVDrOsPdOBgsgi8lX3CBA9qCc0LFfZP3jEjNDsCze6Isdro4O0OzLktGKnHULiAZSeMnIyMBvp/yxsBRwCkUb5PdyO0fUEsDBBQAAAgIAACon+sCh4vibQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSQUpiWoqRgUVyakqyqUWyoa6xiaGRiUWipXGiiUVaslGSUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACon+u8gGRySgIAAAwFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACon+sCh4vibQAAAHgAAAAJACQAAAAAAAAAAAAAAJcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -683,7 +683,6 @@ GameObject:
   - component: {fileID: 833073313}
   - component: {fileID: 833073316}
   - component: {fileID: 833073315}
-  - component: {fileID: 833073314}
   m_Layer: 6
   m_Name: Enemy Placeholder
   m_TagString: Untagged
@@ -703,6 +702,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2087130968}
+  - {fileID: 1119653124}
+  - {fileID: 2013782159}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -719,25 +720,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathfinding: {fileID: 833073315}
-  movementSpeed: 0
+  movementSpeed: 1
   health: 100
   damage: 15
   attackCooldown: 1.33
   attackDistance: 1.5
   actualState: 0
---- !u!65 &833073314
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833073311}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 2, z: 0.75}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &833073315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +963,50 @@ MonoBehaviour:
   mouseSensitivity: 2000
   playerBody: {fileID: 1566483130}
   canMoveCamera: 1
+--- !u!1 &1119653123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119653124}
+  - component: {fileID: 1119653125}
+  m_Layer: 6
+  m_Name: Head
+  m_TagString: EnemyHead
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1119653124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119653123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 833073312}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1119653125
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119653123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6439135, z: 1}
+  m_Center: {x: 0, y: 1.6469568, z: 0}
 --- !u!1 &1293007479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1557,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757549766}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2013782158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013782159}
+  - component: {fileID: 2013782160}
+  m_Layer: 6
+  m_Name: Body
+  m_TagString: EnemyBody
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2013782159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013782158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 833073312}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2013782160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013782158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.33, z: 1}
+  m_Center: {x: 0, y: 0.66, z: 0}
 --- !u!1 &2085595242
 GameObject:
   m_ObjectHideFlags: 0

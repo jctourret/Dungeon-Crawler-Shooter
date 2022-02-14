@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2832923b3967ac45aa5ab22176c6d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  headshotMultiplier: 0
+  damage: 10
+  headshotMultiplier: 2
   weaponRange: 25
   cannonPos: {fileID: 520727383}
   shootCooldown: 0.33
