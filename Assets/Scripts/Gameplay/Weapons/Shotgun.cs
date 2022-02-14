@@ -7,10 +7,6 @@ public class Shotgun : Weapon {
     [SerializeField] protected int buckshots;
     [SerializeField] protected float bulletSpread;
 
-    protected override void Update() {
-        base.Update();
-    }
-
     public override void Shoot() {
         if (actualState == WeaponState.Preparing || actualState == WeaponState.Reloading) {
             Debug.Log("Cant shoot");

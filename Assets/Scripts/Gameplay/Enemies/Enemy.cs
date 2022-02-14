@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         PreparingAttack,
         Dead
     }
-    [SerializeField] EnemyState actualState;
+    [SerializeField] protected EnemyState actualState;
 
     protected virtual void Start()
     {
