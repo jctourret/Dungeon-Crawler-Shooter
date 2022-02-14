@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -24,11 +25,17 @@ public class Enemy : MonoBehaviour
     }
     [SerializeField] protected EnemyState actualState;
 
+    public static Action<Enemy> EnemyDead;
+
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
         pathfinding.destination = player.transform.position;
         pathfinding.maxSpeed = movementSpeed;
+    }
+
+    void OnDestroy() {
+        EnemyDead?.Invoke(this);
     }
 
     protected virtual void Update()
