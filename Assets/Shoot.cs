@@ -21,6 +21,6 @@ public class Shoot : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position,transform.forward);
+        Gizmos.DrawRay(transform.position,transform.forward*10);
     }
 }

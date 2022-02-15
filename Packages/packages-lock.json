@@ -145,7 +145,7 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.subsystemregistration": "1.0.6"
+        "com.unity.subsystemregistration": "1.0.5"
       },
       "url": "https://packages.unity.com"
     },
@@ -234,6 +234,25 @@
       },
       "url": "https://registry.npmjs.org"
     },
+    "io.extendreality.tilia.camerarigs.unityxr": {
+      "version": "1.8.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "io.extendreality.zinnia.unity": "1.46.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "io.extendreality.tilia.camerarigs.xrpluginframework.unity": {
+      "version": "1.4.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "io.extendreality.zinnia.unity": "1.46.0",
+        "com.unity.xr.management": "4.0.1"
+      },
+      "url": "https://registry.npmjs.org"
+    },
     "io.extendreality.tilia.indicators.objectpointers.unity": {
       "version": "1.7.30",
       "depth": 0,
@@ -246,11 +265,21 @@
       "url": "https://registry.npmjs.org"
     },
     "io.extendreality.tilia.input.unityinputmanager": {
-      "version": "1.4.15",
-      "depth": 1,
+      "version": "1.4.16",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "io.extendreality.zinnia.unity": "1.45.0"
+        "io.extendreality.zinnia.unity": "1.46.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "io.extendreality.tilia.input.unityinputsystem": {
+      "version": "1.1.19",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "io.extendreality.zinnia.unity": "1.46.0",
+        "com.unity.inputsystem": "1.0.2"
       },
       "url": "https://registry.npmjs.org"
     },
@@ -273,11 +302,11 @@
       "url": "https://registry.npmjs.org"
     },
     "io.extendreality.tilia.sdk.steamvr.unity": {
-      "version": "1.1.27",
+      "version": "1.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "io.extendreality.zinnia.unity": "1.45.0"
+        "io.extendreality.zinnia.unity": "1.46.0"
       },
       "url": "https://registry.npmjs.org"
     },
@@ -289,7 +318,7 @@
       "url": "https://registry.npmjs.org"
     },
     "io.extendreality.zinnia.unity": {
-      "version": "1.45.0",
+      "version": "1.46.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {

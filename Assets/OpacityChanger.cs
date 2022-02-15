@@ -13,7 +13,6 @@ public class OpacityChanger : MonoBehaviour
 
     public void ChangeOpacity(float value)
     {
-        Debug.Log("Valor de trigger " + value);
         Color currentColor = materialRenderer.material.color;
         currentColor.a = 1f - value;
         materialRenderer.material.color = currentColor;
