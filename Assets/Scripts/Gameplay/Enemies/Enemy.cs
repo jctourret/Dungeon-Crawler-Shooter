@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     }
     [SerializeField] protected EnemyState actualState;
 
+    [SerializeField] protected Animator animator;
+
     public static Action<Enemy> EnemyDead;
 
     protected virtual void Start()
