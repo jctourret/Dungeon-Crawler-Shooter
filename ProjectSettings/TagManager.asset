@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - EnemyBody
+  - EnemyHead
   - InvalidTeleportLocation
   - Ignore Collision Fade
   - AppleStem
@@ -25,9 +27,12 @@ TagManager:
   - 
   - Water
   - UI
+  - Enemy
+  - Ground
   - 
   - 
   - IgnoreTeleportPointer
+  - 
   - 
   - 
   - 
