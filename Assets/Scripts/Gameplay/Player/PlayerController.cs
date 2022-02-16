@@ -31,7 +31,10 @@ public class PlayerController : MonoBehaviour {
 
         health -= value;
         if (health <= 0f) {
-            playerCameraMouse.canMoveCamera = false;
+            if(playerCameraMouse != null)
+            {
+                playerCameraMouse.canMoveCamera = false;
+            }
             actualState = PlayerState.Dead;
             health = 0f;
         }

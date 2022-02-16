@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using System;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] protected AIPath pathfinding;
     [SerializeField] protected float movementSpeed;
@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        pathfinding.destination = player.transform.position;
         pathfinding.maxSpeed = movementSpeed;
     }
 
@@ -43,6 +42,7 @@ public class Enemy : MonoBehaviour
         if (actualState == EnemyState.Dead)
             return;
 
+        pathfinding.destination = player.transform.position;
         if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance) {
             pathfinding.canMove = false;
             actualState = EnemyState.PreparingAttack;
@@ -59,6 +59,20 @@ public class Enemy : MonoBehaviour
                 timerAttack = 0f;
                 AttackPlayer();
             }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (actualState == EnemyState.Dead)
+            return;
+
+        health -= damage;
+        if (health <= 0f)
+        {
+            pathfinding.canMove = false;
+            actualState = EnemyState.Dead;
+            Destroy(this.gameObject, 2f);
         }
     }
 

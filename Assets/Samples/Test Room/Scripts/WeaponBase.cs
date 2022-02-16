@@ -17,7 +17,7 @@ public class WeaponBase : MonoBehaviour
         Debug.Log(gameObject.name +" has been fired");
         if(Physics.Raycast(muzzle.position,muzzle.forward,out hit, range))
         {
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
             if(damageable != null)
             {
                 damageable.TakeDamage(damage);
