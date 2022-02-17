@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     protected PlayerController player;
 
+    public new Renderer[] renderer;
+
     public enum EnemyState {
         GoingToPlayer,
         PreparingAttack,
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         player = FindObjectOfType<PlayerController>();
         pathfinding.maxSpeed = movementSpeed;
+        renderer = gameObject.GetComponentsInChildren<Renderer>();
     }
 
     void OnDestroy() {
@@ -72,6 +75,10 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             pathfinding.canMove = false;
             actualState = EnemyState.Dead;
+            foreach (Renderer rend in renderer)
+            {
+                rend.material.color = Color.blue;
+            }
             Destroy(this.gameObject, 2f);
         }
     }
@@ -84,6 +91,10 @@ public class Enemy : MonoBehaviour, IDamageable
         if (health <= 0f) {
             pathfinding.canMove = false;
             actualState = EnemyState.Dead;
+            foreach(Renderer rend in renderer)
+            {
+                rend.material.color = Color.blue;
+            }
             Destroy(this.gameObject, 2f);
         }
     }

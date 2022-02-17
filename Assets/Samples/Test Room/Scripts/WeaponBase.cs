@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class WeaponBase : MonoBehaviour
 {
-    float range = 100;
+    [SerializeField]
+    float range = 10;
     public Transform muzzle;
     float currentAmmo;
     float maxAmmo;
 
     int damage = 10;
+    int headshotDamage = 20;
 
     public void Fire()
     {
@@ -20,7 +22,14 @@ public class WeaponBase : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
             if(damageable != null)
             {
-                damageable.TakeDamage(damage);
+                if (hit.collider.tag == "EnemyBody")
+                {
+                    damageable.TakeDamage(damage);
+                }
+                else
+                {
+                    damageable.TakeDamage(headshotDamage);
+                }
             }
             Debug.Log(hit.collider.name + " has been shot");
         }

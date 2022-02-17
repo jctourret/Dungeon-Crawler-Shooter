@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public static Action<float,float> OnPlayerDamaged;
+
     [SerializeField] float health;
+    [SerializeField] float maxHealth;
     [SerializeField] Weapon actualWeapon;
     [SerializeField] PlayerCameraMovementMouse playerCameraMouse;
 
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour {
             return;
 
         health -= value;
+        OnPlayerDamaged?.Invoke(health,maxHealth);
         if (health <= 0f) {
             if(playerCameraMouse != null)
             {
