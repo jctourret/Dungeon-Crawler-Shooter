@@ -15,8 +15,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float shootCooldown;
     protected float timerShootCooldown = 0;
 
-    [SerializeField] protected int ammoPerMagazine;
-    [SerializeField] protected int actualAmmo;
+    [SerializeField] protected float maxHeatBuilup;
+    [SerializeField] protected float currentHeat;
+    [SerializeField] protected float heatBuildupRate;
+    [SerializeField] protected float heatDispersionRate;
 
     [SerializeField] protected GameObject particlesHitPrefab;
     [SerializeField] protected GameObject bulletHolePrefab;
@@ -28,7 +30,7 @@ public class Weapon : MonoBehaviour
 
 
     protected enum WeaponState {
-        Ready, Preparing, NoAmmo, Reloading
+        Ready, Charging, Cooling
     }
     [SerializeField] protected WeaponState actualState;
 
@@ -36,16 +38,14 @@ public class Weapon : MonoBehaviour
    {
         Debug.DrawRay(cannonPos.position, cannonPos.forward * weaponRange, Color.yellow);
 
+        currentHeat -= Time.deltaTime * heatDispersionRate;
         switch (actualState) {
-            case WeaponState.Reloading:
-                timerReloading += Time.deltaTime;
-                if(timerReloading >= reloadTime) {
+            case WeaponState.Cooling:
+                if(currentHeat <= 0) {
                     actualState = WeaponState.Ready;
-                    timerReloading = 0f;
-                    actualAmmo = ammoPerMagazine;
                 }
                 break;
-            case WeaponState.Preparing:
+            case WeaponState.Charging:
                 timerShootCooldown += Time.deltaTime;
                 if(timerShootCooldown >= shootCooldown) {
                     actualState = WeaponState.Ready;
@@ -56,14 +56,8 @@ public class Weapon : MonoBehaviour
    }
 
     public virtual void Shoot() {
-        if (actualState == WeaponState.Preparing || actualState == WeaponState.Reloading) 
+        if (actualState == WeaponState.Charging || actualState == WeaponState.Cooling) 
             return;
-        
-
-        if(actualState == WeaponState.NoAmmo) {
-            Reload();
-            return;
-        }
 
         if (actualState == WeaponState.Ready) {
             RaycastHit hit;
@@ -71,15 +65,17 @@ public class Weapon : MonoBehaviour
             if (Physics.Raycast(cannonPos.position, cannonPos.forward, out hit, weaponRange)) {
 
                 if (layerEnemy == (layerEnemy | (1 << hit.transform.gameObject.layer))) {
-                    Enemy e = hit.transform.GetComponentInParent<Enemy>();
+                    IDamageable damageable = hit.transform.GetComponentInParent<IDamageable>();
 
-                    if (e) {
+                    if (damageable != null) {
                         if (hit.transform.CompareTag("EnemyHead")) {
                             Debug.Log("PUM HEADSHOT");
-                            e.Hit(damage * headshotMultiplier);
+                            damageable.TakeDamage(damage * headshotMultiplier);
                         }
                         else
-                            e.Hit(damage);
+                        {
+                            damageable.TakeDamage(damage);
+                        }
                     }
 
                     GameObject ps = Instantiate(particlesHitPrefab, hit.point, particlesHitPrefab.transform.rotation);
@@ -91,18 +87,19 @@ public class Weapon : MonoBehaviour
                 }
             }
 
-            actualState = WeaponState.Preparing;
+            actualState = WeaponState.Charging;
 
-            actualAmmo--;
-            if (actualAmmo <= 0)
-                actualState = WeaponState.NoAmmo;
-            
+            currentHeat += heatBuildupRate;
+            if (currentHeat >= maxHeatBuilup)
+            {
+                actualState = WeaponState.Cooling;
+            }
         }
     }
 
     public virtual void Reload() {
-        if (actualState != WeaponState.Reloading) {
-            actualState = WeaponState.Reloading;
+        if (actualState != WeaponState.Cooling) {
+            actualState = WeaponState.Cooling;
             timerReloading = 0f;
         }
     }

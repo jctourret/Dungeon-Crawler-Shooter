@@ -13,7 +13,7 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        PlayerController.OnPlayerDamaged -= changeColor;
     }
 
     private void Start()

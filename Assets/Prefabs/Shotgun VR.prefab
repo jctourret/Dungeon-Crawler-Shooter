@@ -87,7 +87,6 @@ Transform:
   m_Children:
   - {fileID: 1586219953359993104}
   - {fileID: 8487087363518384884}
-  - {fileID: 675036615803485537}
   m_Father: {fileID: 7960311971938308808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3308261860220645346}
-  - component: {fileID: 3234226694161814534}
+  - component: {fileID: 2348528529828658980}
   m_Layer: 0
   m_Name: Shotgun VR
   m_TagString: Untagged
@@ -125,7 +124,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3234226694161814534
+--- !u!114 &2348528529828658980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +133,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1596100687679259700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aad8aa4b2c056943b5c35f77ae70c9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 477d801bc6a08a241b18320208fc15d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  muzzle: {fileID: 8487087363518384884}
+  damage: 2.5
+  headshotMultiplier: 1.2
+  weaponRange: 8
+  cannonPos: {fileID: 8487087363518384884}
+  shootCooldown: 0
+  ammoPerMagazine: 4
+  actualAmmo: 4
+  particlesHitPrefab: {fileID: 3170341730862960002, guid: 0055a1ac904d655439ce80bd8b45d803,
+    type: 3}
+  bulletHolePrefab: {fileID: 3701030072362383426, guid: 0e69b8908f0f3d74fbbc8d803c9e9a85,
+    type: 3}
+  reloadTime: 5
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 64
+  actualState: 0
+  buckshots: 4
+  bulletSpread: 10
 --- !u!1 &1681737861137173123
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,36 +198,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.53, y: 0.07, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2636879107952001786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 675036615803485537}
-  m_Layer: 0
-  m_Name: Cannon 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &675036615803485537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2636879107952001786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.036, y: 0, z: 0.33}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1035916006559403020}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2814729908466918900
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8487087363518384884}
   m_Layer: 0
-  m_Name: Cannon 1
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2814729908466918900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 0, z: 0.33}
+  m_LocalPosition: {x: 0, y: 0.029, z: 0.336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1035916006559403020}
@@ -525,7 +510,7 @@ MonoBehaviour:
   Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3234226694161814534}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WeaponBase, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
@@ -823,6 +808,12 @@ PrefabInstance:
       objectReference: {fileID: 2291320710608716135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57cea8fee147c654397a0685154f498e, type: 3}
+--- !u!4 &1501311527961123507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1210858528001014937, guid: 57cea8fee147c654397a0685154f498e,
+    type: 3}
+  m_PrefabInstance: {fileID: 295108418712299050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3604306440978781141 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3899411491897718271, guid: 57cea8fee147c654397a0685154f498e,
@@ -835,12 +826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6631cbd1a0377e4dafb140bd9df0a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1501311527961123507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1210858528001014937, guid: 57cea8fee147c654397a0685154f498e,
-    type: 3}
-  m_PrefabInstance: {fileID: 295108418712299050}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &488162731344819046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1582,9 +1567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18402e6d0a88df479eb7fe789b6f57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4763558156625308892 stripped
+--- !u!114 &2291320710608716135 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 933384520905001296, guid: 2006f213367c78b4690c00ea488ad06f,
+  m_CorrespondingSourceObject: {fileID: 5846774759968269547, guid: 2006f213367c78b4690c00ea488ad06f,
     type: 3}
   m_PrefabInstance: {fileID: 5687908484406109580}
   m_PrefabAsset: {fileID: 0}
@@ -1600,9 +1585,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5687908484406109580}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2291320710608716135 stripped
+--- !u!114 &4763558156625308892 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5846774759968269547, guid: 2006f213367c78b4690c00ea488ad06f,
+  m_CorrespondingSourceObject: {fileID: 933384520905001296, guid: 2006f213367c78b4690c00ea488ad06f,
     type: 3}
   m_PrefabInstance: {fileID: 5687908484406109580}
   m_PrefabAsset: {fileID: 0}

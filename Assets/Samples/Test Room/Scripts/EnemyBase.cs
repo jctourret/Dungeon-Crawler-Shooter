@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour, IDamageable
 {
     [SerializeField]
-    int health = 100;
+    float health = 100;
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health = health - damage;
         if(health <0)

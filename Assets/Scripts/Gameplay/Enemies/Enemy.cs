@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (actualState == EnemyState.Dead)
             return;

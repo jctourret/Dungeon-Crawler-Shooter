@@ -8,13 +8,15 @@ public class Shotgun : Weapon {
     [SerializeField] protected float bulletSpread;
 
     public override void Shoot() {
-        if (actualState == WeaponState.Preparing || actualState == WeaponState.Reloading) {
-            Debug.Log("Cant shoot");
+
+        if (actualState == WeaponState.Cooling)
+        {
+            Reload();
             return;
         }
 
-        if (actualState == WeaponState.NoAmmo) {
-            Reload();
+        if (actualState == WeaponState.Charging) {
+            Debug.Log("Cant shoot");
             return;
         }
 
@@ -47,13 +49,13 @@ public class Shotgun : Weapon {
 
             }
 
-            actualState = WeaponState.Preparing;
+            actualState = WeaponState.Charging;
             Debug.Log("Pew pew");
 
-            actualAmmo--;
-            if (actualAmmo <= 0) {
-                actualState = WeaponState.NoAmmo;
-                Debug.Log("No ammo");
+            currentHeat+=heatBuildupRate;
+            if (currentHeat >= maxHeatBuilup) {
+                actualState = WeaponState.Cooling;
+                Debug.Log("Overheated, Cooling down.");
             }
         }
     }
@@ -69,5 +71,9 @@ public class Shotgun : Weapon {
         Vector3 dir = targetPos - cannonPos.position;
         return dir.normalized;
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(cannonPos.position,cannonPos.forward*weaponRange);
+    }
 }
