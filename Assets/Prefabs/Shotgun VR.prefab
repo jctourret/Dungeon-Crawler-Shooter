@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2348528529828658980}
   m_Layer: 0
   m_Name: Shotgun VR
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,8 +141,10 @@ MonoBehaviour:
   weaponRange: 8
   cannonPos: {fileID: 8487087363518384884}
   shootCooldown: 0
-  ammoPerMagazine: 4
-  actualAmmo: 4
+  maxHeatBuilup: 0
+  currentHeat: 0
+  heatBuildupRate: 0
+  heatDispersionRate: 0
   particlesHitPrefab: {fileID: 3170341730862960002, guid: 0055a1ac904d655439ce80bd8b45d803,
     type: 3}
   bulletHolePrefab: {fileID: 3701030072362383426, guid: 0e69b8908f0f3d74fbbc8d803c9e9a85,

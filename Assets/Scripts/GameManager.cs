@@ -18,14 +18,27 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    private void OnEnable()
+    {
+        PlayerController.OnPlayerDead += GoToMainMenu;
+    }
+
+    private void OnDisable()
+    {
+        PlayerController.OnPlayerDead += GoToMainMenu;
+    }
+
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene();
     }
+
     public void GoToGameplay()
     {
         SceneManager.LoadScene((int)scenes.Gameplay);
     }
+
     public void GoToMainMenu()
     {
         currentScene = SceneManager.GetSceneByBuildIndex((int)scenes.MainMenu);

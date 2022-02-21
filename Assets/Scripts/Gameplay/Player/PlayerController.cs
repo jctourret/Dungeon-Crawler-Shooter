@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public static Action<float,float> OnPlayerDamaged;
+    public static Action OnPlayerDead;
 
     [SerializeField] float health;
     [SerializeField] float maxHealth;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour {
             }
             actualState = PlayerState.Dead;
             health = 0f;
+            OnPlayerDead?.Invoke();
         }
     }
 }
