@@ -74,7 +74,7 @@ MonoBehaviour:
   LastUngrabbed:
     m_PersistentCalls:
       m_Calls: []
-  grabType: 0
+  grabType: 1
   grabProviderIndex: 0
 --- !u!54 &69422150334126714
 Rigidbody:
@@ -571,10 +571,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8793817330357973721}
-  - component: {fileID: 8793817330357973720}
+  - component: {fileID: 2069754019152944099}
   m_Layer: 0
   m_Name: Pistol VR
-  m_TagString: Weapon
+  m_TagString: Pistol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -596,7 +596,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8793817330357973720
+--- !u!114 &2069754019152944099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -605,11 +605,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8793817330357973722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aad8aa4b2c056943b5c35f77ae70c9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a2832923b3967ac45aa5ab22176c6d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  muzzle: {fileID: 7102226795004136268}
+  damage: 10
+  headshotMultiplier: 2
+  weaponRange: 10
+  cannonPos: {fileID: 7102226795004136268}
+  shootCooldown: 0.33
+  maxHeatBuilup: 100
+  currentHeat: 0
+  heatBuildupRate: 10
+  heatDispersionRate: 10
+  particlesHitPrefab: {fileID: 3170341730862960002, guid: 0055a1ac904d655439ce80bd8b45d803,
+    type: 3}
+  bulletHolePrefab: {fileID: 3701030072362383426, guid: 0e69b8908f0f3d74fbbc8d803c9e9a85,
+    type: 3}
+  reloadTime: 0
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 64
+  actualState: 0
 --- !u!1 &8793817331309066945
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,9 +710,9 @@ MonoBehaviour:
   Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8793817330357973720}
-        m_TargetAssemblyTypeName: WeaponBase, Assembly-CSharp
-        m_MethodName: Fire
+      - m_Target: {fileID: 2069754019152944099}
+        m_TargetAssemblyTypeName: Pistol, Assembly-CSharp
+        m_MethodName: Shoot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

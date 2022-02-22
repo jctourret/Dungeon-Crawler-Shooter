@@ -37,8 +37,10 @@ public class Weapon : MonoBehaviour
    protected virtual void Update()
    {
         Debug.DrawRay(cannonPos.position, cannonPos.forward * weaponRange, Color.yellow);
-
-        currentHeat -= Time.deltaTime * heatDispersionRate;
+        if(currentHeat > 0.0f)
+        {
+            currentHeat -= Time.deltaTime * heatDispersionRate;
+        }
         switch (actualState) {
             case WeaponState.Cooling:
                 if(currentHeat <= 0) {
